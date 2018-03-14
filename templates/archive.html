@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load martortags %}
+
+{% block title %}
+Archive - Code Smart
+{% endblock %}
+ {% block content %}
+ <br>
+       <div class="col-sm-9">
+         <div class="middlebar">
+         <h4>TOPICS</h4><hr>
+  {% for tutorial in tutorials %}
+  <div class="author-title">
+     <a href="{% url 'readarticle' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
+  </div>
+       <ul class="content-post">
+           <li>
+             <i class="fa fa-calendar"></i>{{tutorial.created_at|date:"M d, Y"}}
+           </li>
+           <li>
+             <i class="fa fa-user" href="" rel="author" ></i> {{tutorial.created_at}}
+             </a>
+           </li>
+             <!-- <li>
+             <i class="fa fa-clock-o">  4 minutes read</i>
+           </li> -->
+           <li>
+             <i class="fa fa-eye"></i>
+             <span class=" "> {{tutorial.views}}</span> views
+           </li>
+         </ul>
+        <!-- <div>
+                    <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+        </div> -->
+      <hr>
+  {% endfor %}
+  <br>
+    </div>
+  </div>
+    <div class="col-sm-3">
+    <div class="sidenav">
+      <p class="author-title">
+      <a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
+      </p>
+      {% for author_info in author_info %}
+      <div class="post-thumb">
+      <img class="img-responsive" src="{{ author_info.document.url }}" />
+      </div>
+      <div>
+        <br>
+        <a href="{% url 'author_info' %}">{{ author_info.blogger}}</a>
+         <p>Title: {{author_info.strong}}</p>  <hr>
+        <p>{{author_info.about_author}}</p>
+      </div>
+      <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'author_info' %}"  >READ MORE</a></div>
+      <hr>
+      <div>
+                <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+      </div>
+      {% endfor %}
+      <br>
+    </div>
+      </div>
+{% endblock %}

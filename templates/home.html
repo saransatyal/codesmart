@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load martortags %}
+
+ {% block content %}
+  <div class="container-fluid masthead">
+    <h1>
+    <a href="" class="logo">
+      Code Smart
+    </a>
+  </h1>
+  <h5>Let us learn Web Development together!</h5>
+  <!--  <div class="ads">
+   <h1>
+    <marquee behavior="scroll" direction="left">
+      THIS WILL BE ADVERTISEMENT SECTION </marquee>
+  </h1>
+  </div>-->
+</div>
+<img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
+</div>
+ <br>
+      <div class="col-sm-9" style="width=100%">
+        {% for tutorial in tutorials %}
+        <div class ="middlebar text-center">
+<h4>TOPICS</h4><hr>
+  <div class="post-title">
+     <a href="{% url 'readarticle' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
+  </div>
+        <ul class="content-post">
+            <li>
+              <i class="fa fa-calendar"></i>{{tutorial.created_at|date:"M d, Y"}}
+            </li>
+                <li>
+            <a href="{% url 'author_info' %}">  <i class="fa fa-user" href="" rel="author" ></i> {{tutorial.user}}
+              </a>
+            </li>
+            <!-- <li>
+              <i class="fa fa-clock-o">  4 minutes read</i>
+            </li> -->
+            <li>
+              <i class="fa fa-eye"></i>
+              <span class=" "> {{tutorial.views}}</span> views
+            </li>
+          </ul>
+          <a href="{% url 'readarticle' tutorial.pk %}">
+  <img class="img-responsive" style="margin: 0 auto;" src="{{ tutorial.document.url }}" />
+  </a>
+<br>
+<div>
+   <p>{{ tutorial.shortdesc }}</p>
+</div>
+       <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'readarticle' tutorial.pk %}"  >READ MORE</a></div>
+       <hr>
+        <div>
+                    <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+
+        {% if tutorials.has_other_pages %}
+      <!-- <ul class="pagination">
+        {% if tutorials.has_previous %}
+          <li><a href="?page={{ tutorials.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+          <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in tutorials.paginator.page_range %}
+          {% if tutorials.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if tutorials.has_next %}
+          <li><a href="?page={{ tutorials.next_page_number }}">&raquo;</a></li>
+        {% else %}
+          <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+      </ul> -->
+
+      <ul class="pagination">
+      {% if tutorials.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ tutorials.previous_page_number }}">Previous</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+      {% endif %}
+      {% for page_num in paginator.page_range %}
+        {% if tutorials.number == page_num %}
+          <li class="page-item active">
+            <span class="page-link">
+              {{ page_num }}
+              <span class="sr-only">(current)</span>
+            </span>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% if tutorials.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ tutorials.next_page_number }}">Next</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Next</span>
+        </li>
+      {% endif %}
+    </ul>
+
+    {% endif %}
+    </div>
+
+
+    <!-- <div class="col-sm-2 leftsidenav text-center">
+  <div>
+              <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+              <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+              <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+              <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+
+  </div>
+  <hr>
+  </div> -->
+
+    <div class="col-sm-3">
+      <div class="leftsidenav text-center">
+<div class="author-title">
+  <a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
+</div>
+  {% for author_info in author_info %}
+    <div class="post-thumb">
+    <img class="img-responsive" src="{{ author_info.document.url }}" />
+  </div>
+    <div>
+      <br>
+
+   <p>Title: {{author_info.strong}}</p>  <hr>
+      <p>{{author_info.about_author}}</p>
+</div>
+
+ <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'author_info' %}">READ MORE</a></div>
+<hr>
+
+  <div>
+              <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+              <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+              <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+              <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+
+  </div>
+{% endfor %}
+
+<br>
+</div>
+</div>
+
+<!-- <div class="col-sm-3">
+ <div class="leftsidenav text-center">
+     <div>
+    <h5>
+     <marquee behavior="scroll" direction="left">
+       THIS WILL BE ADVERTISEMENT SECTION </marquee>
+<br>
+<p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
+   </div>
+</div>
+</div> -->
+
+{% endblock %}

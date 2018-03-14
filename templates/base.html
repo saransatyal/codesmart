@@ -1,0 +1,122 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}Code Smart{% endblock %}</title>
+  <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  {% block stylesheet %}{% endblock %}
+</head>
+<body class="mbody">
+  {% block body %}
+      <nav class="navbar navbar-webmaster">
+          <div class="container">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}"> <img class="img-responsive"button style="margin: 0 auto;" src="/static/img/logo.png" /></a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav navbar-left">
+
+              <li><a href="{% url 'home' %}"><i class="glyphicon glyphicon-home"></i>HOME</a></li>
+              <li><a target="_blank" href="https://github.com/saransatyal"><i class="glyphicon glyphicon-link"></i>GITHUB</a></li>
+               <li><a href="{% url 'mythoughts' %}"><i class="glyphicon glyphicon-tasks"></i>MYTHOUGHTS</a></li>
+               <li><a href="{% url 'archive' %}"><span class="glyphicon glyphicon-arrow-right"></span> ARCHIVE</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'author_info' %}"><i class="glyphicon glyphicon-transfer"></i>ABOUT</a></li>
+              <!-- <li><a href="{% url 'author_info' %}"><span class="glyphicon glyphicon-log-in"></span> WRITE ME</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+  <!-- <nav class="navbar navbar-webmaster">
+      <div class="container-fluid">
+      	<div class="navbar-header">
+  			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+  				<span class="sr-only">Toggle navigation</span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+        <a class="navbar-brand" href="{% url 'home' %}"> <img class="img-responsive"button style="margin: 0 auto;" src="/static/img/logo.png" /></a>
+  		</div>
+  		<div class="collapse navbar-collapse" id="navbar">
+  			<ul class="nav navbar-nav navbar-left">
+
+          <li><a href="{% url 'home' %}"><i class="glyphicon glyphicon-home"></i>HOME</a></li>
+          <li><a href="{% url 'home' %}"><i class="glyphicon glyphicon-link"></i>GITHUB</a></li>
+           <li><a href="{% url 'mythoughts' %}"><i class="glyphicon glyphicon-tasks"></i>MYTHOUGHTS</a></li>
+           <li><a href="{% url 'author_info' %}"><i class="glyphicon glyphicon-transfer"></i>ABOUT</a></li>
+
+  			</ul>
+        <ul class="nav navbar-nav navbar-right">
+       <li><a href="{% url 'archive' %}"><span class="glyphicon glyphicon-arrow-right"></span> ARCHIVE</a></li>
+          <li><a href="{% url 'author_info' %}"><span class="glyphicon glyphicon-log-in"></span> WRITE ME</a></li>
+        </ul>
+  		</div>
+  	</div>
+  </nav>
+  -->
+
+<div class="container">
+<div class="row">
+    {% block content %}
+ {% endblock %}
+ <div id="push"></div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="copyright">
+        © 2018, Code Smart, All rights reserved
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="design">
+         <a href="#">   </a>   <a target="_blank" href="{% url 'author_info' %}">Web Designed & Developed by Saran Satyal</a>
+      </div>
+    </div>
+  </div>
+  <div  >
+              <a href=" "><i id="" data-toggle="tooltip" title="Connect on Facebook" class="fa fa-facebook-square fa-3x social"></i></a>
+              <a href=" "><i id="" data-toggle="tooltip" title="Connect on Twitter" class="fa fa-twitter-square fa-3x social"></i></a>
+              <a href=" "><i id="" data-toggle="tooltip" title="Connect on Google Plus" class="fa fa-google-plus-square fa-3x social"></i></a>
+              <a href=" "><i id="" data-toggle="tooltip" title="Connect on linkedIn" class="fa fa-linkedin-square fa-3x social"></i></a>
+  </div>
+</div>
+</div>
+{% endblock body %}
+{% block javascript %}
+<!-- <div id="fb-root"></div>
+<script>(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=384853768652752&autoLogAppEvents=1';
+ fjs.parentNode.insertBefore(js, fjs); }
+ (document, 'script', 'facebook-jssdk'));</script> -->
+{% endblock %}
+
+</body>
+</html>

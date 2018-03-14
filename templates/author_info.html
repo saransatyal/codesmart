@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load martortags %}
+
+{% block title %}
+About - Code Smart
+{% endblock %}
+ {% block content %}
+
+  <div class="col-sm-7 sidenav">
+    <p class="post-title">
+  <a>ABOUT BLOGGER</a>
+</p>
+  {% for author_info in author_info %}
+    <div class="post-thumb">
+    <img class="img-responsive" src="{{ author_info.document.url }}" />
+  </div>
+    <div>
+      <br>
+     <p>Title: {{author_info.strong}}</p>  <hr>
+      <p>{{author_info.description|safe_markdown}}</p>
+
+      <!-- <div class="fb-comments" data-href=""{% url 'author_info' %}"" data-numposts="5"></div> -->
+
+
+</div>
+<hr>
+{% endfor %}
+
+<br>
+</div>
+
+<div class="col-sm-4 sidenav text-center">
+<div class="author-title">
+<a>CONTACT ME</a>
+</div>
+<div>
+      <br>
+      <div class="read-title glyphicon glyphicon-arrow-right">
+        <a >saransatyal@gmail.com</a>
+      </div>
+
+<hr>
+<div>
+          <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+          <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+          <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+          <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+
+</div>
+<hr>
+</div>
+
+</div>
+
+{% endblock %}

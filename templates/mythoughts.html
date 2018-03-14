@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load martortags %}
+{% block title %}
+My Thoughts - Code Smart
+{% endblock %}
+
+ {% block content %}
+<div class="container-fluid masthead">
+<h1>
+<a href="/" class="logo">
+  My Thoughts...!!!
+</a>
+</h1>
+<h5>Let us learn Web Development together!</h5>
+<img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
+</div>
+
+ <br>
+ {% for mythought in mythoughts%}
+
+
+<div class="mythoughts">
+         <h4>MY THOUGHT</h4><hr>
+         <div class="post-title">
+            <a>{{mythought.header}}</a>
+         </div>
+         <ul class="content-post">
+             <li>
+               <i class="fa fa-calendar"></i>{{mythought.thought_on|date:"M d, Y"}}
+             </li>
+             <li>
+            <a href="{% url 'author_info' %}"> <i class="fa fa-user" rel="author" ></i> {{mythought.blogger}}
+               </a>
+             </li>
+             <!-- <li>
+               <i class="fa fa-clock-o">  4 minutes read</i>
+             </li> -->
+             <li>
+               <i class="fa fa-eye"></i>
+               <span class=" "> 12</span> views
+             </li>
+           </ul>
+
+    <div class="thought-img">
+    <img class="img-responsive" src="{{ mythought.image.url }}" />
+  </div>
+    <p>{{mythought.description|safe_markdown}}</p>
+<!-- By:<div class="read-title"><a href="{% url 'author_info' %}">{{ mythought.blogger}}</a></div> -->
+
+    <hr>
+
+
+        <div>
+                    <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+        </div>
+      <hr>
+  <br>
+  </div>
+
+    {% endfor %}
+{% endblock %}
