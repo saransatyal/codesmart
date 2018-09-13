@@ -16,7 +16,7 @@ h4
   width: 120px;
 }
 
-/* nav bar */
+ /* nav bar */
 nav.navbar-webmaster { background: #1b242c; text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
@@ -32,6 +32,7 @@ nav.navbar-webmaster ul.navbar-nav a:active { background:#3b4045; }
 nav.navbar-webmaster button.navbar-toggle:hover { background: #999; }
 nav.navbar-webmaster button.navbar-toggle > span.icon-bar { background: #fff; }
 @media (max-width: 767px) {.dropdown-menu {text-align: center;}}
+
 nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }
 nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }
 nav.navbar-webmaster ul.dropdown-menu > li > a:hover {color: #fff;background-color: #999}

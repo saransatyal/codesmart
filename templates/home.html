@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load martortags %}
+{% block title %}
 
+{% endblock %}
  {% block content %}
+ <div>
   <div class="container-fluid masthead">
     <h1>
     <a href="" class="logo">
@@ -15,9 +18,10 @@
       THIS WILL BE ADVERTISEMENT SECTION </marquee>
   </h1>
   </div>-->
-</div>
+
 <img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
 </div>
+
  <br>
       <div class="col-sm-9" style="width=100%">
         {% for tutorial in tutorials %}
@@ -175,5 +179,5 @@
    </div>
 </div>
 </div> -->
-
+</div>
 {% endblock %}
