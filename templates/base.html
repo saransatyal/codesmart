@@ -19,7 +19,8 @@
 </head>
 <body class="mbody">
   {% block body %}
-      <nav class=" navbar navbar-webmaster ">
+  <div class="pad">
+      <nav class="navbar-webmaster ">
           <div class="container-fluid">
             <div class=" navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -45,7 +46,7 @@
           </div>
         </div>
       </nav>
-
+</div>
 
   <!-- <nav class="navbar navbar-webmaster">
       <div class="container-fluid">
@@ -77,11 +78,11 @@
   -->
 
 <div class="container-fluid">
-<div class="row">
+
     {% block content %}
  {% endblock %}
  <div id="push"></div>
-</div>
+
 </div>
 
 <div class="footer-bottom">
@@ -119,7 +120,11 @@
  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=384853768652752&autoLogAppEvents=1';
  fjs.parentNode.insertBefore(js, fjs); }
  (document, 'script', 'facebook-jssdk'));</script> -->
-
+ <script>
+     $(document).ready(function() {
+        $('#content').css('margin-top', $('nav.navbar-webmaster').height() + 'px');
+     });
+ </script>
 {% endblock %}
 
 </body>

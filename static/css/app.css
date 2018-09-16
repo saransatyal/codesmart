@@ -6,6 +6,7 @@ background-color: #f1f1f1;
 
 }
 
+
 h4
 {
   text-align: center;
@@ -15,16 +16,25 @@ h4
 
   width: 120px;
 }
-
+.pad
+{
+  padding-bottom: 50px;
+}
  /* nav bar */
-nav.navbar-webmaster { background: #1b242c; text-align: center;
+nav.navbar-webmaster
+{
+   background: #1b242c; text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: bold;
   height: auto;
+  position: fixed;
+  width: 100%;
+  z-index:999999;
 
 }
-nav.navbar-webmaster a { color: #fff; }
+
+nav.navbar-webmaster a { color: #fff;}
 nav.navbar-webmaster ul.navbar-nav a:hover,
 nav.navbar-webmaster ul.navbar-nav a:visited,
 nav.navbar-webmaster ul.navbar-nav a:focus,
@@ -33,6 +43,12 @@ nav.navbar-webmaster button.navbar-toggle:hover { background: #999; }
 nav.navbar-webmaster button.navbar-toggle > span.icon-bar { background: #fff; }
 @media (max-width: 767px) {.dropdown-menu {text-align: center;}}
 
+@media (max-width: 767px)
+{nav.navbar-webmaster
+  {
+    position: relative;
+  }
+}
 nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }
 nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }
 nav.navbar-webmaster ul.dropdown-menu > li > a:hover {color: #fff;background-color: #999}
@@ -46,6 +62,7 @@ nav.navbar-webmaster ul.dropdown-menu > li > a:hover {color: #fff;background-col
   width:500px;
 }
 .masthead {
+
   text-align: center;
   background-color: transparent;
   margin-bottom: 10px;
