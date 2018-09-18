@@ -46,7 +46,7 @@ nav.navbar-webmaster button.navbar-toggle > span.icon-bar { background: #fff; }
 @media (max-width: 767px)
 {nav.navbar-webmaster
   {
-    position: relative;
+    position: fixed;
   }
 }
 nav.navbar-webmaster ul.dropdown-menu > li > a { background: #1b242c; color: #fff; }

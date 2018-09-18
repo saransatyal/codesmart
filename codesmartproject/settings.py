@@ -25,7 +25,7 @@ SECRET_KEY = '#skf1zqni1pm%tas#i2bmzb&5-qwh=nk^t-@i2a*^st7#ukj45'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['codesmart.pythonanywhere.com']
 
 
 # Application definition
