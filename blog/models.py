@@ -37,6 +37,36 @@ class Readarticle(models.Model):
     def view_other(self):
         return self.title.views
 
+class Codeblog(models.Model):
+    title = models.CharField(max_length=50 , unique = True)
+    subject = models.CharField(max_length=100)
+    shortdesc = models.CharField(null=True , max_length=1000)
+    document = models.FileField(null=True,upload_to='documents/')
+    user = models.ForeignKey(User , on_delete = models.CASCADE , related_name='codeblogs')
+    created_at = models.DateTimeField(auto_now_add=True)
+    views = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.title
+
+class Readcodeblog(models.Model):
+    title = models.ForeignKey(Codeblog ,null=True, on_delete = models.CASCADE , related_name='r_codeblogtitle')
+    description = MartorField()
+    written_at = models.DateTimeField(auto_now_add=True,null=True)
+    updated_at = models.DateTimeField(null=True)
+    written_by = models.ForeignKey(User ,null=True, on_delete = models.CASCADE , related_name='r_codeblogcommented_by')
+
+    @property
+    def subject_other(self):
+        return self.title.subject
+
+    @property
+    def document_other(self):
+        return self.title.document
+
+    @property
+    def view_other(self):
+        return self.title.views
 
 class Author(models.Model):
     blogger = models.ForeignKey(User ,null = True, on_delete = models.CASCADE , related_name='authors')

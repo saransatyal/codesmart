@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% load martortags %}
 {% block title %}
-
+Code Blog - Code Smart
 {% endblock %}
  {% block content %}
 
-  <div class="container-fluid masthead">
+    <div class="container-fluid masthead">
     <h1>
     <a href="" class="logo">
       Code Smart
     </a>
   </h1>
   <h5>Let us learn Web Development together!</h5>
-  <!--  <div class="ads">
+     <div class="ads">
    <h1>
     <marquee behavior="scroll" direction="left">
       THIS WILL BE ADVERTISEMENT SECTION </marquee>
   </h1>
-  </div>-->
+  </div>
 
 <img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
 </div>
@@ -64,47 +64,6 @@
         <br>
     </div>
     {% endfor %}
-
-    {% for tip in tips %}
-    <div class ="middlebar text-center">
-<h4>TOPICS</h4><hr>
-<div class="post-title">
- <a href="{% url 'readarticle' tip.pk %}">{{ tip.title }} : {{ tip.subject}}</a>
-</div>
-    <ul class="content-post">
-        <li>
-          <i class="fa fa-calendar"></i>{{tip.created_at|date:"M d, Y"}}
-        </li>
-            <li>
-        <a href="{% url 'author_info' %}">  <i class="fa fa-user" href="" rel="author" ></i> {{tip.user}}
-          </a>
-        </li>
-        <!-- <li>
-          <i class="fa fa-clock-o">  4 minutes read</i>
-        </li> -->
-        <li>
-          <i class="fa fa-eye"></i>
-          <span class=" "> {{tip.views}}</span> views
-        </li>
-      </ul>
-      <a href="{% url 'readarticle' tip.pk %}">
-<img class="img-responsive" style="margin: 0 auto;" src="{{ tip.document.url }}" />
-</a>
-<br>
-<div>
-<p>{{ tip.shortdesc }}</p>
-</div>
-   <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'readarticle' tip.pk %}"  >READ MORE</a></div>
-   <hr>
-    <div>
-                <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
-                <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
-                <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
-                <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
-    </div>
-    <br>
-</div>
-{% endfor %}
 
         {% if tutorials.has_other_pages %}
       <!-- <ul class="pagination">

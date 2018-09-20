@@ -8,17 +8,19 @@ Archive - Code Smart
  <br>
        <div class="col-sm-9">
          <div class="middlebar">
-         <h4>TOPICS</h4><hr>
-  {% for tutorial in tutorials %}
+    <div class="post-title">
+       <a>List of Articles</a>
+     </div> <br>
+  {% for tip in tips %}
   <div class="author-title">
-     <a href="{% url 'readarticle' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
+     <a href="{% url 'readarticle' tip.pk %}">{{ tip.title }} : {{ tip.subject}}</a>
   </div>
        <ul class="content-post">
            <li>
-             <i class="fa fa-calendar"></i>{{tutorial.created_at|date:"M d, Y"}}
+             <i class="fa fa-calendar"></i>{{tip.created_at|date:"M d, Y"}}
            </li>
            <li>
-             <i class="fa fa-user" href="" rel="author" ></i> {{tutorial.created_at}}
+             <i class="fa fa-user" href="" rel="author" ></i> {{tip.created_at}}
              </a>
            </li>
              <!-- <li>
@@ -26,7 +28,7 @@ Archive - Code Smart
            </li> -->
            <li>
              <i class="fa fa-eye"></i>
-             <span class=" "> {{tutorial.views}}</span> views
+             <span class=" "> {{tip.views}}</span> views
            </li>
          </ul>
         <!-- <div>
@@ -37,6 +39,39 @@ Archive - Code Smart
         </div> -->
       <hr>
   {% endfor %}
+</div>
+<div class="middlebar">
+<div class="post-title">
+  <a>List of Code Blog</a>
+</div><br>
+{% for tutorial in tutorials %}
+<div class="author-title">
+<a href="{% url 'readcodeblog' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
+</div>
+<ul class="content-post">
+    <li>
+      <i class="fa fa-calendar"></i>{{tutorial.created_at|date:"M d, Y"}}
+    </li>
+    <li>
+      <i class="fa fa-user" href="" rel="author" ></i> {{tutorial.created_at}}
+      </a>
+    </li>
+      <!-- <li>
+      <i class="fa fa-clock-o">  4 minutes read</i>
+    </li> -->
+    <li>
+      <i class="fa fa-eye"></i>
+      <span class=" "> {{tutorial.views}}</span> views
+    </li>
+  </ul>
+ <!-- <div>
+             <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+             <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+             <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+             <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+ </div> -->
+<hr>
+{% endfor %}
   <br>
     </div>
   </div>

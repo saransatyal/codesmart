@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load martortags %}
+{% block title %}
+{% for articles in tutorials.r_codeblogtitle.all %}
+{{articles.title}} : {{ articles.subject_other}} - Code Smart
+  {% endfor %}
+{% endblock %}
+<!-- {% block masthead %}
+<h1>
+  <a href="/" class="logo">
+    Code Smart
+  </a>
+</h1>
+<h5>Let us learn Web Development together!</h5>
+<img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" />
+ {% endblock %} -->
+
+ {% block content %}
+ <br>
+
+ <!-- <div class="col-sm-2 leftsidenav text-center">
+<p class="author-title">
+<a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
+</p>
+{% for author_info in author_info %}
+ <div class="post-thumb">
+ <img class="img-responsive" src="{{ author_info.document.url }}" />
+</div>
+ <div>
+   <br>
+   <a href="{% url 'author_info' %}">{{ author_info.blogger}}</a>
+   <p>{{author_info.strong}}</p>  <hr>
+   <p>{{author_info.about_author}}</p>
+</div>
+<li><a href="{% url 'author_info' %}">Read more..</a></li>
+<hr>
+
+<div>
+           <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+           <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+           <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+           <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+
+</div>
+{% endfor %}
+
+<br>
+</div> -->
+
+       <div class="container-fluid middlebar" style="width: 85%">
+         <h4>TOPIC</h4><hr>
+ {% for articles in tutorials.r_codeblogtitle.all %}
+  <div class="post-title">
+     <a>{{articles.title}} : {{ articles.subject_other}}</a>
+
+  </div>
+        <ul class="content-post">
+            <li>
+              <i class="fa fa-calendar"></i>{{articles.updated_at|date:"M d, Y"}}
+            </li>
+
+            <li>
+            <a href="{% url 'author_info' %}">  <i class="fa fa-user" href="" rel="author" ></i> {{articles.written_by}}
+              </a>
+            </li>
+            <!-- <li>
+              <i class="fa fa-clock-o">  4 minutes read</i>
+            </li> -->
+            <li>
+              <i class="fa fa-eye"></i>
+              <span class=" "> {{articles.view_other}}</span> views
+            </li>
+          </ul>
+
+      <img class="img-responsive" style="margin: 0 auto;" src="{{ articles.document_other.url }}" />
+<br>
+      <p>{{ articles.description|safe_markdown}} </p>
+
+       <hr>
+        <div>
+                    <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                    <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+        </div>
+      <hr>
+  {% endfor %}
+
+  <!-- <div class="fb-comments" data-href=""{% url 'readarticle' %}"" data-numposts="5"></div> -->
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://gocodesmart.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  <br>
+    </div>
+
+
+           <div class="container-fluid middlebar" style="width: 85%">
+             <h4>Related post</h4><hr>
+
+<br>
+        </div>
+    <script id="dsq-count-scr" src="//gocodesmart.disqus.com/count.js" async></script>
+{% endblock %}

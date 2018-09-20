@@ -4,7 +4,7 @@ from django.utils.html import mark_safe
 from markdown import markdown
 from martor.widgets import AdminMartorWidget
 
-from blog.models import Readarticle
+from blog.models import Readarticle , Codeblog , Readcodeblog
 
 # Registering Tutorial editor in admin
 # Define the admin class
@@ -15,6 +15,26 @@ class Admin_Article(admin.ModelAdmin):
         obj.save()
 
 class Admin_Readarticle(admin.ModelAdmin):
+
+    list_display = ('title', 'get_subject','written_by','written_at','get_document','get_views')
+    def get_subject(self , obj):
+        return obj.subject_other
+    def get_document(self , obj):
+        return obj.document_other
+    def get_views(self , obj):
+        return obj.view_other
+
+    def save_model(self, request, obj, form, change):
+        obj.user = request.user
+        obj.save()
+
+class Admin_Codeblog(admin.ModelAdmin):
+    list_display = ('title', 'subject','created_at','user' , 'document','views')
+    def save_model(self, request, obj, form, change):
+        obj.user = request.user
+        obj.save()
+
+class Admin_Readcodeblog(admin.ModelAdmin):
 
     list_display = ('title', 'get_subject','written_by','written_at','get_document','get_views')
     def get_subject(self , obj):
@@ -52,3 +72,5 @@ admin.site.register(Article, Admin_Article)
 admin.site.register(Author , Admin_Author)
 admin.site.register(Readarticle , Admin_Readarticle)
 admin.site.register(Mythought , Admin_Mythought)
+admin.site.register(Codeblog, Admin_Codeblog)
+admin.site.register(Readcodeblog , Admin_Readcodeblog)
