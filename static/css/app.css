@@ -23,10 +23,11 @@ h4
  /* nav bar */
 nav.navbar-webmaster
 {
-   background: #1b242c; text-align: center;
+  background: Black;
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 15px;
+
   height: auto;
   position: fixed;
   width: 100%;
@@ -40,8 +41,12 @@ nav.navbar-webmaster a { color: #fff;}
 nav.navbar-webmaster ul.navbar-nav a:hover,
 nav.navbar-webmaster ul.navbar-nav a:visited,
 nav.navbar-webmaster ul.navbar-nav a:focus,
-nav.navbar-webmaster ul.navbar-nav a:active { background:#3b4045; }
-nav.navbar-webmaster button.navbar-toggle:hover { background: #999; }
+nav.navbar-webmaster ul.navbar-nav a:active
+{
+  background:Black;
+  font-weight: bold;
+}
+nav.navbar-webmaster button.navbar-toggle:hover { background:  }
 nav.navbar-webmaster button.navbar-toggle > span.icon-bar { background: #fff; }
 @media (max-width: 767px) {.dropdown-menu {text-align: center;}}
 
@@ -341,12 +346,17 @@ footer*/
 }}
 
 .footer-bottom {
- background-color: #1b242c;
+ background-color: Black;
  min-height: 30px;
  font-family: 'Montserrat', sans-serif;
  width: 100%;
-   padding: 15px 0;
-     position: relative;
+ padding: 15px 0;
+ position: relative;
+}
+
+.footer-bottom  a:hover{
+text-decoration: none;
+color: White;
 }
 .push {
 height: 100px;
@@ -369,6 +379,8 @@ height: 100px;
 .design a {
  color: #fff;
 }
+
+
 /*
  Social
 */
@@ -385,6 +397,7 @@ height: 100px;
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
+  color: Black;
 }
 /*
  Multicoloured Hover Variations
