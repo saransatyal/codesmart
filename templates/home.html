@@ -13,7 +13,7 @@ Here's what you need to know  - Code Smart
   </h1>
   <h3>
   <div class="mastheadtext">
-    <a>Looking for better code snippets, latest technology articles? You have just entered to the right place!</a>
+    <h3>Looking for better code snippets, latest technology articles? You have just entered to the right place!</h3>
   </div></h3>
   <!--  <div class="ads">
    <h1>
@@ -24,9 +24,10 @@ Here's what you need to know  - Code Smart
 
 <!-- <img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" /> -->
 </div>
+<!-- <a class="navbar-brand" href="{% url 'home' %}"> <img class="img-responsive"button style="margin: 0 auto;" src="/static/img/logo.png" /></a> -->
 
  <br>
-      <div class="col-sm-9" style="width=100%">
+      <div class="col-sm-9 " style="width=100%" >
         {% for tutorial in tutorials %}
         <div class ="middlebar text-center">
 <h4>TOPICS</h4><hr>
@@ -50,7 +51,7 @@ Here's what you need to know  - Code Smart
             </li>
           </ul>
           <a href="{% url 'readcodeblog' tutorial.pk %}">
-  <img class="img-responsive" style="margin: 0 auto;" src="{{ tutorial.document.url }}" />
+  <img class="img-responsive" style="margin: 0 auto; width:85%" src="{{ tutorial.document.url }}" />
   </a>
 <br>
 <div>
