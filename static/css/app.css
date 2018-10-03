@@ -14,7 +14,8 @@ h4
 .navbar-brand
 {
 
-  width: 120px;
+  width: 170px;
+
 }
 .pad
 {
@@ -26,9 +27,9 @@ nav.navbar-webmaster
   background: Black;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
+  color: White;
 
-  height: auto;
   position: fixed;
   width: 100%;
   z-index:999999;
@@ -38,13 +39,19 @@ nav.navbar-webmaster
 }
 
 nav.navbar-webmaster a { color: #fff;}
-nav.navbar-webmaster ul.navbar-nav a:hover,
+nav.navbar-webmaster ul.navbar-nav a:hover
+{
+  color: #23527c;
+  background-color: Black;
+  font-weight: bold;
+
+},
 nav.navbar-webmaster ul.navbar-nav a:visited,
 nav.navbar-webmaster ul.navbar-nav a:focus,
 nav.navbar-webmaster ul.navbar-nav a:active
 {
   background:Black;
-  font-weight: bold;
+    font-weight: bold;
 }
 nav.navbar-webmaster button.navbar-toggle:hover { background:  }
 nav.navbar-webmaster button.navbar-toggle > span.icon-bar { background: #fff; }
