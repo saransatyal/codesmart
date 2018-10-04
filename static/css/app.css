@@ -16,6 +16,7 @@ h4
 
   width: 170px;
 
+
 }
 .pad
 {
@@ -39,6 +40,10 @@ nav.navbar-webmaster
 }
 
 nav.navbar-webmaster a { color: #fff;}
+nav.navbar-webmaster ul.navbar-nav a
+{
+  background-color: Black;
+}
 nav.navbar-webmaster ul.navbar-nav a:hover
 {
   color: #23527c;
@@ -322,6 +327,29 @@ display:inline-block;
     float: none;
     }
   }
+
+  .leftsidenav2
+  {
+        font-family: 'Montserrat', sans-serif;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: auto;
+
+        background-color: #fff;
+        box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.01);
+        line-height: 1.2em;
+        font-size: 1.2em;
+        margin-bottom: 40px;
+  }
+
+    @media (max-width: 767px)
+    {
+      .leftsidenav2
+      {
+      float: none;
+      }
+    }
 .sidenav {
   font-family: 'Montserrat', sans-serif;
       padding-top: 20px;
