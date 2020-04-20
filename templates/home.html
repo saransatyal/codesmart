@@ -5,32 +5,71 @@ Here's what you need to know  - Code Smart
 {% endblock %}
  {% block content %}
 
-  <div class="container-fluid masthead content-post">
-    <h1>
-    <a href="" class="logo">
-      Code Smart
-    </a>
-  </h1>
-  <h3>
-  <div class="mastheadtext">
-    <h3>Looking for better code snippets, latest technology articles? You have just entered to the right place!</h3>
-  </div></h3>
-  <!--  <div class="ads">
-   <h1>
-    <marquee behavior="scroll" direction="left">
-      THIS WILL BE ADVERTISEMENT SECTION </marquee>
-  </h1>
-  </div>-->
+ 
+  
 
-<!-- <img class="img-responsive" style="margin: 0 auto;" src="/static/img/ad.png" /> -->
+<div class="content-pic">
+<div class="row">
+   
+	<div class="hero">
+	 <h1>Hey, I'm</h1>
+	<p><u>SARAN SATYAL</u></p>
+   
+	<img class="img-responsive" src= "{{'static/img/demo3.jpg'}}" />
+  </div>
+  </div>
+
+
+   
+   <!-- <h1> -->
+   <!-- <a href="" class="logo"> -->
+      <!-- Code Smart -->
+   <!-- </a> -->
+  <!-- </h1> -->
+  <!-- <h3> -->
+  <!-- <div class="mastheadtext"> -->
+    <!-- <h3>Looking for better code snippets, latest technology articles? You have just entered to the right place!</h3> -->
+  <!-- </div></h3> -->
 </div>
-<!-- <a class="navbar-brand" href="{% url 'home' %}"> <img class="img-responsive"button style="margin: 0 auto;" src="/static/img/logo.png" /></a> -->
 
+<div class="container-fluid middlebar" >
+        <div class ="text-center">     
+      <div class="middlecontent">
+<div class="author-title">
+  <a href="{% url 'author_info' %}">ABOUT ME</a> 
+</div>
+  {% for author_info in author_info %}
+    <!-- <div class="post-thumb"> -->
+    <!-- <img class="img-responsive" src="{{ author_info.document.url }}" /> -->
+  <!-- </div> -->
+    <div class="textjustify">
+      <br>
+      <p>{{author_info.about_author}}</p>
+</div>
+
+ <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'author_info' %}">READ MORE</a></div>
+<hr>
+  <div>
+              <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+              <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+              <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+              <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+
+  </div>
+{% endfor %}
+<br>
+</div>
+    </div>
+	</div>
+	
+	
+<!-- <a class="navbar-brand" href="{% url 'home' %}"> <img class="img-responsive"button style="margin: 0 auto;" src="/static/img/logo.png" /></a> -->
  <br>
-      <div class="col-sm-9 " style="width=100%" >
+      <div class="container-fluid middlebar" style="width=100%" >
+	  <h4>TOPICS</h4><hr>
         {% for tutorial in tutorials %}
         <div class ="middlebar text-center">
-<h4>TOPICS</h4><hr>
+
   <div class="post-title">
      <a href="{% url 'readcodeblog' tutorial.pk %}">{{ tutorial.title }} : {{ tutorial.subject}}</a>
   </div>
@@ -51,27 +90,33 @@ Here's what you need to know  - Code Smart
             </li>
           </ul>
           <a href="{% url 'readcodeblog' tutorial.pk %}">
-  <img class="img-responsive" style="margin: 0 auto; width:85%" src="{{ tutorial.document.url }}" />
+  <img class="img-responsive img-rounded" style="margin: 0 auto;" src="{{ tutorial.document.url }}" />
   </a>
 <br>
 <div>
    <p>{{ tutorial.shortdesc }}</p>
 </div>
        <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'readcodeblog' tutorial.pk %}"  >READ MORE</a></div>
-       <hr>
+       
         <div>
                     <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
                     <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
                     <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
                     <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
         </div>
+		<hr>
         <br>
     </div>
     {% endfor %}
-
+	
+	
+	
+	<!-- WRITINGS -->
+	
+	<h4>WRITINGS</h4><hr>
     {% for tip in tips %}
     <div class ="middlebar text-center">
-<h4>TOPICS</h4><hr>
+
 <div class="post-title">
  <a href="{% url 'readarticle' tip.pk %}">{{ tip.title }} : {{ tip.subject}}</a>
 </div>
@@ -92,20 +137,21 @@ Here's what you need to know  - Code Smart
         </li>
       </ul>
       <a href="{% url 'readarticle' tip.pk %}">
-<img class="img-responsive" style="margin: 0 auto;" src="{{ tip.document.url }}" />
+<img class="img-responsive img-rounded" style="margin: 0 auto;" src="{{ tip.document.url }}" />
 </a>
 <br>
 <div>
 <p>{{ tip.shortdesc }}</p>
 </div>
    <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'readarticle' tip.pk %}"  >READ MORE</a></div>
-   <hr>
+   
     <div>
                 <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
                 <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
                 <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
                 <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
     </div>
+	<hr>
     <br>
 </div>
 {% endfor %}
@@ -181,72 +227,72 @@ Here's what you need to know  - Code Smart
   <hr>
   </div> -->
 
-    <div class="col-sm-3">
-      <div class="leftsidenav text-center">
-<div class="author-title">
-  <a href="{% url 'author_info' %}">ABOUT BLOGGER</a>
-</div>
-  {% for author_info in author_info %}
-    <div class="post-thumb">
-    <img class="img-responsive" src="{{ author_info.document.url }}" />
-  </div>
-    <div>
-      <br>
+    <!-- <div class="col-sm-3"> -->
+      <!-- <div class="leftsidenav text-center"> -->
+<!-- <div class="author-title"> -->
+  <!-- <a href="{% url 'author_info' %}">ABOUT BLOGGER</a> -->
+<!-- </div> -->
+  <!-- {% for author_info in author_info %} -->
+    <!-- <div class="post-thumb"> -->
+    <!-- <img class="img-responsive" src="{{ author_info.document.url }}" /> -->
+  <!-- </div> -->
+    <!-- <div> -->
+      <!-- <br> -->
 
 
-      <p>{{author_info.about_author}}</p>
-</div>
+      <!-- <p>{{author_info.about_author}}</p> -->
+<!-- </div> -->
 
- <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'author_info' %}">READ MORE</a></div>
-<hr>
+ <!-- <div class="read-title glyphicon glyphicon-arrow-right"><a href="{% url 'author_info' %}">READ MORE</a></div> -->
+<!-- <hr> -->
 
-  <div>
-              <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
-              <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
-              <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
-              <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+  <!-- <div> -->
+              <!-- <a href=" "><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a> -->
+              <!-- <a href=" "><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a> -->
+              <!-- <a href=" "><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a> -->
+              <!-- <a href=" "><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a> -->
 
-  </div>
-{% endfor %}
+  <!-- </div> -->
+<!-- {% endfor %} -->
 
-<br>
-</div>
-</div>
+<!-- <br> -->
+<!-- </div> -->
+<!-- </div> -->
 
-  <div class="col-sm-3">
- <div class="leftsidenav2 text-center">
-     <div>
+  <!-- <div class="col-sm-3"> -->
+ <!-- <div class="leftsidenav2 text-center"> -->
+     <!-- <div> -->
 
-       <div class="author-title">
-         <a>SUBSCRIBE</a>
-       </div>
-     <h1>COMING SOON</h1>
-     <!-- <input name="email" class="u-full-width" id="id_email" placeholder="your@email.com" type="email">
-     <input value="Subscribe" name="subscribe" class="button-primary" type="submit"> -->
+       <!-- <div class="author-title"> -->
+         <!-- <a>SUBSCRIBE</a> -->
+       <!-- </div> -->
+     <!-- <h1>COMING SOON</h1> -->
+     <!-- <!-- <input name="email" class="u-full-width" id="id_email" placeholder="your@email.com" type="email"> -->
+     <!-- <input value="Subscribe" name="subscribe" class="button-primary" type="submit"> -->  
 
-<br>
-<p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
-<br>
-   </div>
-</div>
-</div>
+<!-- <br> -->
+<!-- <p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p> -->
+<!-- <br> -->
+   <!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
 
-<div class="col-sm-3">
-<div class="leftsidenav2 text-center">
-   <div>
+<!-- <div class="col-sm-3"> -->
+<!-- <div class="leftsidenav2 text-center"> -->
+   <!-- <div> -->
 
-     <div class="author-title">
-       <a>MY TWEETS</a>
-     </div>
-   <h1>COMING SOOON</h1>
-   <!-- <input name="email" class="u-full-width" id="id_email" placeholder="your@email.com" type="email">
-   <input value="Subscribe" name="subscribe" class="button-primary" type="submit"> -->
+     <!-- <div class="author-title"> -->
+       <!-- <a>MY TWEETS</a> -->
+     <!-- </div> -->
+   <!-- <h1>COMING SOOON</h1> -->
+   <!-- <!-- <input name="email" class="u-full-width" id="id_email" placeholder="your@email.com" type="email"> -->
+   <!-- <input value="Subscribe" name="subscribe" class="button-primary" type="submit"> -->  
 
-<br>
-<p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
-<br>
- </div>
-</div>
-</div>
+<!-- <br> -->
+<!-- <p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p> -->
+<!-- <br> -->
+ <!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
 
 {% endblock %}

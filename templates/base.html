@@ -35,16 +35,13 @@
             <ul class="nav navbar-nav" id="navbar">
 
               <li><a href="{% url 'home' %}"><i class=""></i>START-HERE</a></li>
-              <!-- <li><a target="_blank" href="https://github.com/saransatyal"><i class="glyphicon glyphicon-link"></i>GITHUB</a></li> -->
               <li><a href="{% url 'codeblog' %}"><i class=" "></i>CODE BLOG</a></li>
-
                <li><a href="{% url 'articles' %}"><i class=" "></i>ARTICLES</a></li>
                <li><a href="{% url 'mythoughts' %}"><span class=" "></span>MY-THOUGHTS</a></li>
-               <li><a href="{% url 'author_info' %}"><i class=" "></i> CONNECT</a></li>
-              <li><a href="{% url 'author_info' %}"><i class=" "></i> ABOUT</a></li>
-              <li><a href="{% url 'archive' %}"><span class=" "></span>ALL-IN-ONE</a></li>
+                            <li><a href="{% url 'archive' %}"><span class=" "></span>ALL-IN-ONE</a></li>
+ 
+			   <li><a href="{% url 'author_info' %}"><i class=" "></i> CONNECT</a></li>
 
-              <!-- <li><a href="{% url 'author_info' %}"><span class="glyphicon glyphicon-log-in"></span> WRITE ME</a></li> -->
             </ul>
           </div>
         </div>
@@ -57,29 +54,55 @@
 
  {% endblock %}
 
+
+
 </div>
 
-<div class="footer-bottom">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <div class="copyright">
-        © 2018, Code Smart, All rights reserved
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <div class="design">
-        <a target="_blank" href="{% url 'author_info' %}">Web Designed & Developed by Saran Satyal</a>
-      </div>
-    </div>
-  </div>
-  <div  >
-              <a href=" "><i id="" data-toggle="tooltip" title="Connect on Facebook" class="fa fa-facebook-square fa-3x social"></i></a>
-              <a href=" "><i id="" data-toggle="tooltip" title="Connect on Twitter" class="fa fa-twitter-square fa-3x social"></i></a>
-              <a href=" "><i id="" data-toggle="tooltip" title="Connect on Google Plus" class="fa fa-google-plus-square fa-3x social"></i></a>
-              <a href=" "><i id="" data-toggle="tooltip" title="Connect on linkedIn" class="fa fa-linkedin-square fa-3x social"></i></a>
-  </div>
+<div class="newsbackground">
+	<section class="home-newsletter">
+	</br></br>
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+	<div class="single middlecontent">
+		<h2>Subscribe to my Newsletter</h2>
+	<div class="input-group">
+	   <span>  <input type="email" class="form-control" placeholder="Name" />
+		  </span>
+
+         <span><input type="email" class="form-control" placeholder="Email"/>
+          </span>
+		  
+		  <span class="input-group-btn">
+         <button class="btn btn-theme" type="submit">SUBMIT</button>
+         </span>
+		 
+		  </div>
+		  <br/>
+		  
+	</div>
 </div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<div class="footerbox">
+<div class="bg-custom mt-5 pt-30 pt-60 pb-5">
+ 
+
+ 
+      <div class="row" >
+      <div class="col-md-12 textcolor">
+	  
+        <h3 class="text-center pt-2 mb-2">© 2020, Saran Satyal, All rights reserved</h3>
+      
+	  </div>
+	  
+    </div>
+    </div>
+    
+	</div>
 </div>
 {% endblock body %}
 

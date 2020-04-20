@@ -49,7 +49,7 @@ def home(request):
     tips = Article.objects.all().order_by('created_at')
     tutorials = Codeblog.objects.all().order_by('created_at')
     page = request.GET.get('page', 1)
-    paginator = Paginator(tutorials, 5)
+    paginator = Paginator(tutorials, 2)
     try:
         tutorials = paginator.page(page)
     except PageNotAnInteger:
